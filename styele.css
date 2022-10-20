@@ -1,0 +1,136 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  text-align: center;
+}
+
+header {
+  background-color: black;
+  grid-area: header;
+}
+
+nav {
+  background-color: grey;
+  grid-area: nav;
+}
+
+main {
+  background-color: black;
+  grid-area: main;
+}
+
+aside {
+  background-color: black;
+  grid-area: aside;
+}
+
+footer {
+  background-color: black;
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 6fr 15fr 1fr;
+  grid-template-rows: 2.5vh 95vh 2.5vh;
+  grid-template-areas:
+    'header header header '
+    'nav main aside'
+    'footer footer footer';
+}
+
+.icones_esquerda {
+  width: 35px;
+  height: 35px;
+  margin-top: 140px;
+}
+
+.icones_espacamento_esquerda {
+  display: flex;
+  flex-direction: column;
+}
+
+.icones_esquerda:hover {
+  background-color: rgb(167, 164, 164);
+  border: 2px solid green;
+}
+
+.foto_perfil {
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: 5px 3px 10px black;
+  margin-top: 130px;
+}
+
+.titulo {
+  font-size: 20px;
+  color: transparent;
+}
+
+.subtitulo {
+  font-size: 15px;
+  color: transparent;
+  letter-spacing: 0.1rem;
+}
+
+.icones_espacamento_direta {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icones_direita:hover {
+  background-color: gray;
+  border: 2px solid green;
+}
+
+p span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  background-color: gray;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+
+p {
+  margin-left: 30%;
+  display: block;
+  width: fit-content;
+  position: relative;
+  animation: text_reveal 1.5s ease forwards;
+  animation-delay: 2s;
+}
+
+p span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  animation: text_reveal_box 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
